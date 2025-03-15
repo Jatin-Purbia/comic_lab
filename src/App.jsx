@@ -10,12 +10,12 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="w-full min-h-screen bg-white text-black flex flex-col">
+    <div className="w-full min-h-screen bg-cream text-black flex flex-col">
       <Sidebar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <Navbar setMenuOpen={setMenuOpen} />
       <Carousel />
       <Home />
       <ComicCards />
+      <Navbar setMenuOpen={setMenuOpen} />
     </div>
   );
 }
