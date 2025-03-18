@@ -22,7 +22,7 @@ function LoginPage() {
     <div className="flex flex-col items-center justify-center min-h-screen bg-cream">
       <form className="bg-cream-dark p-8 rounded shadow-md w-80" onSubmit={handleLogin}>
         <h2 className="text-2xl font-semibold text-center mb-4 text-gray-800">
-          Login
+          Login to move
         </h2>
         {error && <p className="text-red-500 mb-4 text-center">{error}</p>}
         <input
