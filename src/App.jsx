@@ -27,7 +27,7 @@ function App() {
           path="/"
           element={
             <div className="w-full min-h-screen bg-cream text-black flex flex-col">
-              <Sidebar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+              {/* <Sidebar menuOpen={menuOpen} setMenuOpen={setMenuOpen} /> */}
               <div className="flex-grow">
                 <Carousel />
                 <Home />
