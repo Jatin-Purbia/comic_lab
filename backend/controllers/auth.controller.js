@@ -72,5 +72,39 @@ export const signUp = async (req, res) => {
     }
 }
 
+export const login = async (req, res) => {
+    const { email, password } = req.body;
+    try {
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                message: 'User not found'
+            })
+        }
+        
+        if(user.password !== password) {
+            return res.status(401).json({
+                success: false,
+                message: 'Invalid password'
+            })
+        }
+        
+        const { _id } = user;
+        const jwtToken = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { algorithm: 'HS256', expiresIn: '1d' });
+
+        return res.status(200).json({
+            success: true,
+            jwtToken,
+            user
+        })
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: error.message
+        })
+        
+    }
+}
 
 
