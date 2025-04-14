@@ -1,48 +1,48 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import bgImage from "../../assets/test-1.jpg"; // Import the background image
-
+import bgImage from "../../assets/bg1.png";
 const QuestionalitySection = () => {
-  const navigate = useNavigate(); // Hook to handle navigation
+  const navigate = useNavigate();
 
   return (
     <div
-      className="relative h-screen w-full flex flex-col items-center justify-center text-center bg-cover bg-center"
+      className="relative h-screen w-full bg-cover bg-center flex flex-col justify-between text-white"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
-      {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black opacity-50"></div>
 
-      {/* Content */}
-      <div className="relative z-10 text-white px-6">
-        <h1 className="text-4xl font-bold">QUESTIONALITY</h1>
-        <h2 className="text-lg font-semibold mt-1">
+      <div className="relative z-10 text-center pt-16">
+        <h1 className="text-7xl font-bold">QUESTIONALITY</h1>
+        <h2 className="text-4xl font-bold mt-2">
           If you want to know more, ask questions
         </h2>
+      </div>
 
-        {/* Buttons as Navigation Links */}
-        <div className="bg-black bg-opacity-70 px-10 py-6 rounded-lg mt-4 space-y-4">
-          <button
-            onClick={() => navigate("/faqs")}
-            className="block w-full bg-green-600 hover:bg-green-700 py-2 rounded-md text-lg font-medium"
-          >
-            FAQs
-          </button>
-          <button
-            onClick={() => navigate("/questions")}
-            className="block w-full bg-blue-600 hover:bg-blue-700 py-2 rounded-md text-lg font-medium"
-          >
-            Questions
-          </button>
-        </div>
 
-        {/* Footer Text */}
-        <h3 className="text-xl font-bold mt-6">
+      <div
+        className="relative z-10 flex flex-col items-center gap-4 py-8 bg-black bg-opacity-70 w-full"
+        style={{ minHeight: "50vh" }}
+      >
+        <QuestionalityItem label="FAQs" onClick={() => navigate("/faqs")} />
+        <QuestionalityItem label="Questions" onClick={() => navigate("/questions")} />
+      </div>
+
+      <div className="relative z-10 text-center pb-10">
+        <h3 className="text-5xl font-bold">
           WE WILL MAKE A DIFFERENCE TOGETHER
         </h3>
       </div>
     </div>
   );
 };
+
+const QuestionalityItem = ({ label, onClick }) => (
+  <span
+    onClick={onClick}
+    className="cursor-pointer text-3xl font-semibold inline-block"
+  >
+    {label}
+  </span>
+);
 
 export default QuestionalitySection;
