@@ -8,7 +8,8 @@ import Visibility from "./pages/Visibility/index.jsx";
 import Inclusivity from "./pages/Inclusivity.jsx";
 import Originality from "./pages/Originality.jsx";
 import Activity from "./pages/Activity/index.jsx";
-import Creativity from "./pages/Creativity.jsx";
+import Creativity from "./pages/Creativity/index.jsx";
+import Comics from "./pages/Creativity/Comics.jsx";
 
 // Activity Subpages
 import Competitions from "./pages/Activity/Competitions.jsx";
@@ -56,6 +57,9 @@ function App() {
       
         {/* Visibility section */}  
         <Route path="/news" element={<div className="w-full min-h-screen bg-cream text-black flex flex-col"><News /></div>} />
+
+        {/* Comics section */}  
+        <Route path="/comics" element={<div className="w-full min-h-screen bg-cream text-black flex flex-col"><Comics /></div>} />
       </Routes>
     </BrowserRouter>
   );
