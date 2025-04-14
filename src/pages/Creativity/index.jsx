@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import bgImage from "../../assets/bg1.png";
 
 function Creativity() {
+  const navigate = useNavigate();
   return (
     <div
       className="relative h-screen w-full bg-cover bg-center flex flex-col justify-between text-white"

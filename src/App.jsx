@@ -25,6 +25,7 @@ import Questions from "./pages/Questionality/Questions.jsx";
 
 // Visibility Subpages
 import News from "./pages/Visibility/News.jsx";
+import DC from "./pages/Activity/DC.jsx";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -60,6 +61,9 @@ function App() {
 
         {/* Comics section */}  
         <Route path="/comics" element={<div className="w-full min-h-screen bg-cream text-black flex flex-col"><Comics /></div>} />
+
+        {/* Projects section */}  
+        <Route path="/dc" element={<div className="w-full min-h-screen bg-cream text-black flex flex-col"><DC/></div>} />
       </Routes>
     </BrowserRouter>
   );
