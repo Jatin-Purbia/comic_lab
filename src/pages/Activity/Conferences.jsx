@@ -1,9 +1,10 @@
 import React from "react";
+import conferences from "../conferences/index.jsx";
 
 const Conferences = () => {
   return (
-    <div className="h-screen flex items-center justify-center text-3xl font-bold">
-      Conferences   
+    <div>
+      {conferences()}
     </div>
   );
 };

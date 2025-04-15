@@ -27,6 +27,9 @@ import Questions from "./pages/Questionality/Questions.jsx";
 import News from "./pages/Visibility/News.jsx";
 import DC from "./pages/Activity/DC.jsx";
 
+// Conferences Subpages
+import Igncc2024 from "./pages/conferences/igncc2024.jsx";
+import Igncc2025 from "./pages/conferences/igncc2025.jsx";
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -64,6 +67,12 @@ function App() {
 
         {/* Projects section */}  
         <Route path="/dc" element={<div className="w-full min-h-screen bg-cream text-black flex flex-col"><DC/></div>} />
+
+        {/* Conferences section*/}
+        <Route path="/igncc2024" element={<div className="w-full min-h-screen bg-cream text-black flex flex-col"><Igncc2024/></div>} />
+        <Route path="/igncc2025" element={<div className="w-full min-h-screen bg-cream text-black flex flex-col"><Igncc2025/></div>} />
+
+        {/* Default route */}
       </Routes>
     </BrowserRouter>
   );
