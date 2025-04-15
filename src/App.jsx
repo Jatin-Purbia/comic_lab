@@ -30,6 +30,7 @@ import DC from "./pages/Activity/DC.jsx";
 // Conferences Subpages
 import Igncc2024 from "./pages/conferences/igncc2024.jsx";
 import Igncc2025 from "./pages/conferences/igncc2025.jsx";
+import FirstExperiment from "./pages/conferences/first_experiment.jsx";
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -71,6 +72,7 @@ function App() {
         {/* Conferences section*/}
         <Route path="/igncc2024" element={<div className="w-full min-h-screen bg-cream text-black flex flex-col"><Igncc2024/></div>} />
         <Route path="/igncc2025" element={<div className="w-full min-h-screen bg-cream text-black flex flex-col"><Igncc2025/></div>} />
+        <Route path="/firstexperiment" element={<div className="w-full min-h-screen bg-cream text-black flex flex-col"><FirstExperiment/></div>} />
 
         {/* Default route */}
       </Routes>
