@@ -10,7 +10,7 @@ const Menu = () => {
   const links = [
     { text: "QUESTIONALITY", path: "/questionality" },
     { text: "VISIBILITY", path: "/visibility" },
-    { text: "INCLUSIVITY", path: "/inclusivity" },
+    { text: "INCLUSIVITY", path: "/login" },
     { text: "ORIGINALITY", path: "/originality" },
     { text: "ACTIVITY", path: "/activity" },
     { text: "CREATIVITY", path: "/creativity" },

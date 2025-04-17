@@ -14,6 +14,14 @@ function firstExperiment() {
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black opacity-40"></div>
 
+      {/* Back Button */}
+      <button
+        onClick={() => navigate(-1)}
+        className="absolute top-4 left-4 z-20 bg-black bg-opacity-50 hover:bg-opacity-70 text-white px-4 py-2 rounded-md transition-all duration-200"
+      >
+        ← Back
+      </button>
+
       {/* Top Section */}
       <div className="relative z-10 text-center pt-16">
         <h1 className="text-7xl font-bold">1st Experiment</h1>
@@ -32,11 +40,11 @@ function firstExperiment() {
           <div className="flex-1">
             <h2 className="text-2xl font-bold underline">Alternative Concept of Time</h2>
             <p className="text-lg mt-2">
-            “The old common saying regarding Meetei [Meitei] concept of time, ‘64 mikup (moments) make a pung (at present “hour” is called pung in Manipuri [Meiteilon]). 8 pung make a yuthak. 8 yuthak make a day.’ So, there are 8 × 8 = 64 pung in a day” (p. 287)
+            "The old common saying regarding Meetei [Meitei] concept of time, '64 mikup (moments) make a pung (at present "hour" is called pung in Manipuri [Meiteilon]). 8 pung make a yuthak. 8 yuthak make a day.' So, there are 8 × 8 = 64 pung in a day" (p. 287)
             <br/>Hence, there are 64 hours in a day instead of 24.
             </p>
 
-             {/* Emoji */}
+            {/* Emoji */}
             <div className="flex justify-center items-center mt-4">
               <img
                 src={emoji_hourglass}
@@ -59,15 +67,13 @@ function firstExperiment() {
                 alt="Music Emoji"
                 className="w-16 h-16 object-contain"
               />
-  </div>
+            </div>
           </div>
         </div>
-            
-        
 
         {/* Source */}
         <p className="text-sm mt-4 text-center">
-          Source: Usham Rojiro (2018): “Subdued Eloquence: Poetics of Body Movement, Time and Space.”
+          Source: Usham Rojiro (2018): "Subdued Eloquence: Poetics of Body Movement, Time and Space."
         </p>
       </div>
 
