@@ -1,11 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import bgImage from "../../assets/bg1.png";
-import competitionImage1 from "../../assets/comp_1.png";
-import competitionImage2 from "../../assets/comp_2.png";
-import competitionImage3 from "../../assets/comp_3.png";
+import bgImage from "../../../assets/bg1.png";
+import competitionImage1 from "../../../assets/media-8.png";
+import competitionImage2 from "../../../assets/media-2.png";
+import competitionImage3 from "../../../assets/media-7.png";
 
-const Competitions = () => {
+const Comp1 = () => {
   const navigate = useNavigate();
   return (
     <div className="relative min-h-screen w-full">
@@ -30,22 +30,26 @@ const Competitions = () => {
         {/* Content */}
         <div className="flex-1 flex flex-col items-center justify-center text-center py-12 md:py-16">
           <div className="text-center">
-            <h1 className="text-6xl md:text-7xl font-bold text-white">Competitions</h1>
+            <h1 className="text-6xl md:text-7xl font-bold text-white">2D to 3D</h1>
             <h2 className="text-3xl md:text-4xl font-bold mt-2 text-white">
-              When we never give up.
+            Our first student competition@IITJ. <br/>
+            (30  June 2024)
             </h2>
           </div>
 
           <div className="flex flex-col mt-10 items-center gap-2 md:gap-3 py-6 md:py-8 bg-black bg-opacity-70 w-full">
             {/* Responsive Image Grid */}
-            <h2 className="text-white text-2xl font-bold">2D to 3D</h2>
+            
+            <button 
+            onClick={() => navigate("/winner")}
+            className="text-white text-2xl font-bold">WINNER</button>
             <div className="flex flex-wrap justify-between gap-4 px-4">
               {[competitionImage1, competitionImage2, competitionImage3].map((img, idx) => (
                 <img
                   key={idx}
                   src={img}
                   alt={`Competition ${idx + 1}`}
-                  className="w-full sm:w-[48%] md:w-[30%] lg:w-[28%] h-auto rounded-lg shadow-md transition-transform hover:scale-105"
+                  className="w-full sm:w-[48%] md:w-[30%] lg:w-[28%] aspect-[251/426] h-auto rounded-lg shadow-md transition-transform hover:scale-105"
                 />
               ))}
             </div>
@@ -62,4 +66,4 @@ const Competitions = () => {
   );
 };
 
-export default Competitions;
+export default Comp1;

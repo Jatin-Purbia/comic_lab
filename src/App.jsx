@@ -12,7 +12,11 @@ import Creativity from "./pages/Creativity/index.jsx";
 import Comics from "./pages/Creativity/Comics.jsx";
 
 // Activity Subpages
-import Competitions from "./pages/Activity/Competitions.jsx";
+import Comp1 from "./pages/Activity/Competitions/2d-3d.jsx";
+import Winner from "./pages/Activity/Competitions/winner.jsx";
+
+// Activity Subpages
+import Competitions from "./pages/Activity/Competitions/index.jsx";
 import Conferences from "./pages/Activity/Conferences.jsx";
 import Courses from "./pages/Activity/Courses.jsx";
 import Events from "./pages/Activity/Events.jsx";
@@ -99,6 +103,9 @@ function App() {
           <Route path="/reader" element={<Reader />} />
           <Route path="/creator" element={<Creator />} />
           <Route path="/scholar" element={<Scholar />} />
+          {/*Competitions section*/}
+          <Route path="/2d-3d" element={<Comp1/>}/>
+          <Route path="/winner" element={<Winner/>}/>
           
 
           {/* 404 page */}
