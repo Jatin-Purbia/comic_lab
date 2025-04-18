@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import bgImage from "../../assets/bg1.png";
 
 const News = () => {
+  const navigate = useNavigate();
   return (
     <div
       className="relative h-screen w-full bg-cover bg-center flex flex-col justify-between text-white"
@@ -10,6 +11,14 @@ const News = () => {
     >
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black opacity-40"></div>
+
+      {/* Back Button */}
+      <button
+        onClick={() => navigate(-1)}
+        className="absolute top-4 left-4 z-20 bg-black bg-opacity-50 hover:bg-opacity-70 text-white px-4 py-2 rounded-md transition-all duration-200"
+      >
+        ← Back
+      </button>
 
       {/* Top Section */}
       <div className="relative z-10 text-center pt-16">

@@ -5,7 +5,7 @@ import Landing from "./Landing/Landing.jsx";
 import Menu from "./Menu/Menu.jsx";
 import Questionality from "./pages/Questionality/index.jsx";
 import Visibility from "./pages/Visibility/index.jsx";
-import Inclusivity from "./pages/Inclusivity/index.jsx";
+// import Inclusivity from "./pages/Inclusivity/index.jsx";
 import Originality from "./pages/Originality/index.jsx";
 import Activity from "./pages/Activity/index.jsx";
 import Creativity from "./pages/Creativity/index.jsx";
@@ -57,7 +57,7 @@ function App() {
           {/* menu section */}
           <Route path="/questionality" element={<Questionality />} />
           <Route path="/visibility" element={<Visibility />} />
-          <Route path="/inclusivity/*" element={<Inclusivity />} />
+          {/* <Route path="/inclusivity/*" element={<Inclusivity />} /> */}
           <Route path="/originality" element={<Originality />} />
           <Route path="/activity" element={<Activity />} />
           <Route path="/creativity" element={<Creativity />} />
@@ -87,6 +87,23 @@ function App() {
           <Route path="/igncc2024" element={<Igncc2024/>} />
           <Route path="/igncc2025" element={<Igncc2025/>} />
           <Route path="/firstexperiment" element={<FirstExperiment/>} />
+
+          {/* Inclusivity section */}
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+
+          {/* Originality section */}
+          <Route path="/who_we_are" element={<WhoWeAre />} />
+          <Route path="/student" element={<Student />} />
+          <Route path="/faculty" element={<Faculty />} /> 
+          <Route path="/reader" element={<Reader />} />
+          <Route path="/creator" element={<Creator />} />
+          <Route path="/scholar" element={<Scholar />} />
+          
+
+          {/* 404 page */}
+
+
         </Routes>
       </div>
     </BrowserRouter>
