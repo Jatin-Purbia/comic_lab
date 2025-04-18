@@ -7,7 +7,7 @@ import Media2 from "../assets/media-2.png";
 import Media3 from "../assets/media-3.png";
 import Media4 from "../assets/media-4.png";
 
-const LandingPage = () => {
+const Landing = () => {
   const navigate = useNavigate();
 
   return (
@@ -48,4 +48,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default Landing;

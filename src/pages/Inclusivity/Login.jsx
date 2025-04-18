@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import bgImage from '../../assets/bg1.png';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -29,64 +30,75 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen w-full overflow-y-auto bg-gray-50">
-      <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-md w-full space-y-8">
-          <div>
-            <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-              Sign in to your account
+    <div className="relative min-h-screen w-full">
+      {/* Fixed Background */}
+      <div
+        className="fixed inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${bgImage})` }}
+      >
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+      </div>
+
+      {/* Scrollable Content */}
+      <div className="relative z-10 min-h-screen flex flex-col">
+        {/* Back Button */}
+        <button
+          onClick={() => navigate(-1)}
+          className="fixed top-4 left-4 z-20 bg-black bg-opacity-50 hover:bg-opacity-70 text-white px-4 py-2 rounded-md transition-all duration-200"
+        >
+          ← Back
+        </button>
+
+        {/* Content */}
+        <div className="flex-1 flex flex-col items-center justify-center text-center py-12 md:py-16">
+          <div className="text-center">
+            <h1 className="text-6xl md:text-7xl font-bold text-white">Login</h1>
+            <h2 className="text-3xl md:text-4xl font-bold mt-2 text-white">
+              Welcome Back
             </h2>
           </div>
-          <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-            {error && (
-              <div className="text-red-500 text-center">{error}</div>
-            )}
-            <div className="rounded-md shadow-sm -space-y-px">
-              <div>
-                <label htmlFor="email" className="sr-only">Email address</label>
+
+          <div className="flex flex-col items-center gap-2 md:gap-3 py-6 md:py-8 bg-black bg-opacity-70 w-full">
+            <form onSubmit={handleSubmit} className="w-full max-w-md px-4">
+              {error && (
+                <div className="text-red-500 text-center">{error}</div>
+              )}
+              <div className="mb-4">
                 <input
-                  id="email"
-                  name="email"
                   type="email"
-                  required
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                  placeholder="Email address"
+                  name="email"
                   value={formData.email}
                   onChange={handleChange}
+                  placeholder="Email"
+                  className="w-full px-4 py-2 rounded-md bg-black bg-opacity-50 text-white border border-white"
+                  required
                 />
               </div>
-              <div>
-                <label htmlFor="password" className="sr-only">Password</label>
+              <div className="mb-6">
                 <input
-                  id="password"
-                  name="password"
                   type="password"
-                  required
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                  placeholder="Password"
+                  name="password"
                   value={formData.password}
                   onChange={handleChange}
+                  placeholder="Password"
+                  className="w-full px-4 py-2 rounded-md bg-black bg-opacity-50 text-white border border-white"
+                  required
                 />
               </div>
-            </div>
-
-            <div>
               <button
                 type="submit"
-                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className="w-full bg-white text-black py-2 rounded-md font-bold hover:bg-opacity-90 transition-all duration-200"
               >
-                Sign in
+                Login
               </button>
-            </div>
-            <div className="text-center">
-              <p className="text-sm text-gray-600">
-                Don't have an account?{' '}
-                <Link to="/inclusivity/signup" className="font-medium text-indigo-600 hover:text-indigo-500">
-                  Sign up
-                </Link>
-              </p>
-            </div>
-          </form>
+            </form>
+          </div>
+
+          <div className="text-center py-6 md:pb-10">
+            <h3 className="text-4xl md:text-5xl font-bold text-white">
+              WE WILL MAKE A DIFFERENCE TOGETHER
+            </h3>
+          </div>
         </div>
       </div>
     </div>

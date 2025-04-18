@@ -8,12 +8,12 @@ import twitterIcon from "../assets/media-1.png";
 
 const Menu = () => {
   const links = [
-    { text: "QUESTIONALITY", path: "/questionality" },
-    { text: "VISIBILITY", path: "/visibility" },
-    { text: "INCLUSIVITY", path: "/inclusivity" },
-    { text: "ORIGINALITY", path: "/originality" },
     { text: "ACTIVITY", path: "/activity" },
     { text: "CREATIVITY", path: "/creativity" },
+    { text: "INCLUSIVITY", path: "/login" },
+    { text: "ORIGINALITY", path: "/originality" },
+    { text: "QUESTIONALITY", path: "/questionality" },
+    { text: "VISIBILITY", path: "/visibility" },
   ];
 
   return (
