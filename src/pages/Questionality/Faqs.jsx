@@ -1,13 +1,16 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import bgImage from "../../assets/bg1.png";
 
 const Faqs = () => {
+  const navigate = useNavigate();
   return (
     <div
       className="relative h-screen w-full bg-cover bg-center flex flex-col justify-between text-white"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="absolute inset-0 bg-black opacity-50"></div>
+      
       {/* Back Button */}
       <button
         onClick={() => navigate(-1)}
@@ -41,23 +44,22 @@ const FaqItem = ({ question, answer }) => {
 
   return (
     <div
-  className={`w-3/4 p-4 text-left transition-all duration-300 ${
-    isOpen ? "bg-transparent" : "bg-transparent"
-  }`}
-  onClick={() => setIsOpen(!isOpen)}
->
-  <div className="cursor-pointer">
-    <h4 className="text-center text-2xl font-semibold">{question}</h4>
-  </div>
-  <div
-    className={`overflow-hidden transition-all duration-300 ${
-      isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
-    }`}
-  >
-    <p className="text-center text-lg mt-2 text-gray-300">{answer}</p>
-  </div>
-</div>
-
+      className={`w-3/4 p-4 text-left transition-all duration-300 ${
+        isOpen ? "bg-transparent" : "bg-transparent"
+      }`}
+      onClick={() => setIsOpen(!isOpen)}
+    >
+      <div className="cursor-pointer">
+        <h4 className="text-center text-2xl font-semibold">{question}</h4>
+      </div>
+      <div
+        className={`overflow-hidden transition-all duration-300 ${
+          isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <p className="text-center text-lg mt-2 text-gray-300">{answer}</p>
+      </div>
+    </div>
   );
 };
 

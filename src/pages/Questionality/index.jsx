@@ -10,6 +10,7 @@ const QuestionalitySection = () => {
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="absolute inset-0 bg-black opacity-50"></div>
+      
       {/* Back Button */}
       <button
         onClick={() => navigate(-1)}
