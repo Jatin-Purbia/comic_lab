@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AuthProvider } from './contexts/AuthContext';
 
 import Landing from "./Landing/Landing.jsx";
 import Menu from "./Menu/Menu.jsx";
@@ -39,7 +40,7 @@ import FirstExperiment from "./pages/conferences/first_experiment.jsx";
 // Inclusivity Subpages
 import Signup from "./pages/Inclusivity/Signup.jsx";
 import Login from "./pages/Inclusivity/Login.jsx";
-
+import Profile from "./pages/Inclusivity/Profile.jsx";
 // Originality Subpages
 import WhoWeAre from "./pages/Originality/who_we_are.jsx";
 import Student from "./pages/Originality/student.jsx";
@@ -52,68 +53,71 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <BrowserRouter>
-      <div className="w-full min-h-screen overflow-y-auto bg-cream text-black">
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/menu" element={<Menu />} />
+    <AuthProvider>
+      <Router>
+        <div className="w-full min-h-screen overflow-y-auto bg-cream text-black">
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/menu" element={<Menu />} />
+            
+            {/* menu section */}
+            <Route path="/questionality" element={<Questionality />} />
+            <Route path="/visibility" element={<Visibility />} />
+            {/* <Route path="/inclusivity/*" element={<Inclusivity />} /> */}
+            <Route path="/originality" element={<Originality />} />
+            <Route path="/activity" element={<Activity />} />
+            <Route path="/creativity" element={<Creativity />} />
+            
+            {/* Activity section */}
+            <Route path="/competitions" element={<Competitions />} />
+            <Route path="/conferences" element={<Conferences />} />
+            <Route path="/courses" element={<Courses />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/publications" element={<Publications />} />
           
-          {/* menu section */}
-          <Route path="/questionality" element={<Questionality />} />
-          <Route path="/visibility" element={<Visibility />} />
-          {/* <Route path="/inclusivity/*" element={<Inclusivity />} /> */}
-          <Route path="/originality" element={<Originality />} />
-          <Route path="/activity" element={<Activity />} />
-          <Route path="/creativity" element={<Creativity />} />
+            {/* Questionality section */}
+            <Route path="/faqs" element={<Faqs />} />
+            <Route path="/questions" element={<Questions />} />
           
-          {/* Activity section */}
-          <Route path="/competitions" element={<Competitions />} />
-          <Route path="/conferences" element={<Conferences />} />
-          <Route path="/courses" element={<Courses />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/publications" element={<Publications />} />
-        
-          {/* Questionality section */}
-          <Route path="/faqs" element={<Faqs />} />
-          <Route path="/questions" element={<Questions />} />
-        
-          {/* Visibility section */}  
-          <Route path="/news" element={<News />} />
+            {/* Visibility section */}  
+            <Route path="/news" element={<News />} />
 
-          {/* Comics section */}  
-          <Route path="/comics" element={<Comics />} />
+            {/* Comics section */}  
+            <Route path="/comics" element={<Comics />} />
 
-          {/* Projects section */}  
-          <Route path="/dc" element={<DC/>} />
+            {/* Projects section */}  
+            <Route path="/dc" element={<DC/>} />
 
-          {/* Conferences section*/}
-          <Route path="/igncc2024" element={<Igncc2024/>} />
-          <Route path="/igncc2025" element={<Igncc2025/>} />
-          <Route path="/firstexperiment" element={<FirstExperiment/>} />
+            {/* Conferences section*/}
+            <Route path="/igncc2024" element={<Igncc2024/>} />
+            <Route path="/igncc2025" element={<Igncc2025/>} />
+            <Route path="/firstexperiment" element={<FirstExperiment/>} />
 
-          {/* Inclusivity section */}
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
+            {/* Inclusivity section */}
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/profile" element={<Profile />} />
 
-          {/* Originality section */}
-          <Route path="/who_we_are" element={<WhoWeAre />} />
-          <Route path="/student" element={<Student />} />
-          <Route path="/faculty" element={<Faculty />} /> 
-          <Route path="/reader" element={<Reader />} />
-          <Route path="/creator" element={<Creator />} />
-          <Route path="/scholar" element={<Scholar />} />
-          {/*Competitions section*/}
-          <Route path="/2d-3d" element={<Comp1/>}/>
-          <Route path="/winner" element={<Winner/>}/>
-          
+            {/* Originality section */}
+            <Route path="/who_we_are" element={<WhoWeAre />} />
+            <Route path="/student" element={<Student />} />
+            <Route path="/faculty" element={<Faculty />} /> 
+            <Route path="/reader" element={<Reader />} />
+            <Route path="/creator" element={<Creator />} />
+            <Route path="/scholar" element={<Scholar />} />
+            {/*Competitions section*/}
+            <Route path="/2d-3d" element={<Comp1/>}/>
+            <Route path="/winner" element={<Winner/>}/>
+            
 
-          {/* 404 page */}
+            {/* 404 page */}
 
 
-        </Routes>
-      </div>
-    </BrowserRouter>
+          </Routes>
+        </div>
+      </Router>
+    </AuthProvider>
   );
 }
 

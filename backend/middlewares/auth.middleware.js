@@ -1,35 +1,31 @@
-import jwt from 'jsonwebtoken';
-import User from "../models/user.model.js";
-import { ApiError } from '../utils/ApiError.js';
+const jwt = require('jsonwebtoken');
+const User = require('../models/User');
+const { ApiError } = require('../utils/ApiError.js');
 
-const authenticateJWT = async (req, res, next) => {
+const authMiddleware = async (req, res, next) => {
     const token = req.headers.authorization?.split(' ')[1];
 
-    if (token) {
-        try {
-            // Verify the token and extract the userId
-            const decoded = jwt.verify(token, process.env.JWT_SECRET, { algorithms: ['HS256'] });
-            const userId = decoded.id; // Assuming 'id' is the key used in the token payload
+    if (!token) {
+        return res.status(401).json({ message: 'Token missing' });
+    }
 
-            // Fetch the user from the database using the userId
-            const user = await User.findById(userId);
-            if (!user) {
-                return next(new ApiError(404, "User not found")); // User not found
-            }
-
-            // Attach the user object to the request
-            req.user = user;
-            next(); // Continue to the next middleware
-        } catch (err) {
-            if (err.name === 'TokenExpiredError') {
-                return res.status(401).json({ message: 'Token has expired' }); // 401 if the token is expired
-            }
-            console.error(err);
-            return next(new ApiError(403, "Forbidden Access - Token Verification Failed")); // Pass error to the error handler
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const user = await User.findById(decoded.userId);
+        
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
         }
-    } else {
-        return next(new ApiError(401, "Token Missing - Unauthorized")); // Unauthorized if token is missing
+
+        req.user = { userId: user._id };
+        next();
+    } catch (err) {
+        if (err.name === 'TokenExpiredError') {
+            return res.status(401).json({ message: 'Token expired' });
+        }
+        console.error('Token verification error:', err);
+        return res.status(403).json({ message: 'Invalid token' });
     }
 };
 
-export default authenticateJWT;
+module.exports = authMiddleware;

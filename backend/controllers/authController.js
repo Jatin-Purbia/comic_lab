@@ -28,12 +28,21 @@ exports.signup = async (req, res) => {
             { expiresIn: '24h' }
         );
 
+        // Return user data without password
+        const userData = {
+            _id: user._id,
+            name: user.name,
+            email: user.email,
+            role: user.role || 'user'
+        };
+
         res.status(201).json({
             message: 'User created successfully',
-            token
+            token,
+            user: userData
         });
     } catch (error) {
-        console.error(error);
+        console.error('Signup error:', error);
         res.status(500).json({ message: 'Server error' });
     }
 };
@@ -62,12 +71,46 @@ exports.login = async (req, res) => {
             { expiresIn: '24h' }
         );
 
+        // Return user data without password
+        const userData = {
+            _id: user._id,
+            name: user.name,
+            email: user.email,
+            role: user.role || 'user'
+        };
+
         res.json({
             message: 'Login successful',
+            token,
+            user: userData
+        });
+    } catch (error) {
+        console.error('Login error:', error);
+        res.status(500).json({ message: 'Server error' });
+    }
+};
+
+// Get current user data
+exports.getMe = async (req, res) => {
+    try {
+        const user = await User.findById(req.user.userId).select('-password');
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        // Generate new token
+        const token = jwt.sign(
+            { userId: user._id },
+            process.env.JWT_SECRET,
+            { expiresIn: '24h' }
+        );
+
+        res.json({ 
+            user,
             token
         });
     } catch (error) {
-        console.error(error);
+        console.error('GetMe error:', error);
         res.status(500).json({ message: 'Server error' });
     }
 }; 
