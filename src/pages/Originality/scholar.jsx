@@ -35,7 +35,7 @@ const Scholar = () => {
           </div>
 
           <div className="flex flex-col items-center gap-2 md:gap-3 py-6 md:py-8 bg-black bg-opacity-70 w-full">
-            <ul className="list-disc list-inside text-lg md:text-xl leading-relaxed space-y-2">
+            <ul className="list-disc list-inside text-lg md:text-xl leading-relaxed space-y-2 text-white">
               <li>Ann Miller, University of Leicester</li>
               <li>Professor Anthony Fung, Chinese University of Hong Kong</li>
               <li>Boris Pun, Chinese University of Hong Kong</li>

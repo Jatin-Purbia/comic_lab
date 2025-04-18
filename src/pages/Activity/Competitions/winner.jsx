@@ -4,7 +4,7 @@ import bgImage from "../../../assets/bg1.png";
 import competitionImage1 from "../../../assets/media-5.png";
 import competitionImage2 from "../../../assets/media-4.png";
 import competitionImage3 from "../../../assets/media-6.png";
-import competitionImage4 from "../../../assets/media-3.png";
+import competitionImage4 from "../../../assets/media-9.png";
 
 const Winner = () => {
   const navigate = useNavigate();
@@ -43,7 +43,7 @@ const Winner = () => {
             <h1 className="text-white text-2xl font-bold">Vatsal Kumar</h1>
             <h3 className="text-white text-2xl font-bold pb-6">BTech Student <br/>
             (Department of Bioscience & Bioengineering)</h3>
-            <div className="flex flex-wrap justify-between gap-4 px-4">
+            <div className="flex flex-wrap justify-between gap-1 px-8">
               {[competitionImage1, competitionImage2, competitionImage3,competitionImage4].map((img, idx) => (
                 <img
                   key={idx}

@@ -34,9 +34,12 @@ const Questions = () => {
 
           {/* Middle Section */}
           <div className="flex flex-col items-center justify-center bg-black bg-opacity-60 w-full py-12">
-            <button className="text-3xl font-semibold underline cursor-pointer text-white">
-              Questions
-            </button>
+          <button
+           className="text-3xl font-semibold underline cursor-pointer text-white"
+           onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSfexKQ7g4Y_PZ85JA62R1u-Mx3iv6ZQ0n6JtmM4A5U3X1I97A/viewform', '_blank')}
+        >
+  Questions
+</button>
           </div>
 
           {/* Footer Section */}

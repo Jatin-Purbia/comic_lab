@@ -56,7 +56,7 @@ const Originality = () => {
 const OriginalityItem = ({ label, onClick }) => (
   <span
     onClick={onClick}
-    className="cursor-pointer text-2xl md:text-3xl font-semibold inline-block py-1"
+    className="cursor-pointer text-2xl text-white md:text-3xl font-semibold inline-block py-1"
   >
     {label}
   </span>

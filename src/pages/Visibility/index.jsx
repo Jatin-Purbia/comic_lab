@@ -52,7 +52,7 @@ const Visibility = () => {
 const VisibilityItem = ({ label, onClick }) => (
   <span
     onClick={onClick}
-    className="cursor-pointer text-3xl font-semibold inline-block"
+    className="cursor-pointer text-3xl font-semibold inline-block text-white"
   >
     {label}
   </span>

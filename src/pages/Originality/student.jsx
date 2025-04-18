@@ -36,7 +36,7 @@ const Student = () => {
 
           <div className="flex flex-col items-center gap-2 md:gap-3 py-6 md:py-8 bg-black bg-opacity-70 w-full">
             <ul className="text-lg md:text-xl leading-relaxed space-y-1 mx-auto list-disc">
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center text-white">
                 <li className="text-center">14 doctoral students</li>
                 <li className="text-center">19 Master's students</li>
                 <li className="text-center">28 Bachelor's students</li>

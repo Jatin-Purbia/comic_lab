@@ -34,7 +34,7 @@ const News = () => {
           </div>
 
           <div className="flex flex-col items-center gap-2 md:gap-3 py-6 md:py-8 bg-black bg-opacity-70 w-full">
-            {/* Add your news content here */}
+            <h2 className="text-3xl font-bold text-white">COMING SOON!!</h2>
           </div>
 
           <div className="text-center py-6 md:pb-10">
