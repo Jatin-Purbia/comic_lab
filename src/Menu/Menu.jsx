@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Youtube, Linkedin, Instagram, Facebook, Twitter, User } from "lucide-react";
 import logo from "../assets/logo.png";
-
+import bg from "../assets/welcome_page_bg.png";
 const Menu = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [user, setUser] = useState(null);
@@ -64,7 +64,16 @@ const Menu = () => {
   }
 
   return (
-    <div className="relative min-h-screen w-full flex flex-col md:flex-row bg-[#f3eed3] text-center overflow-hidden">
+    
+    <div
+      className="relative min-h-screen w-full flex flex-col md:flex-row text-center overflow-hidden"
+      style={{
+        backgroundImage: `url(${bg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       {/* Profile Icon */}
       <button
         onClick={() => navigate('/profile')}
