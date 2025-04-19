@@ -33,7 +33,7 @@ const IGNCC2024 = () => {
                         </h2>
                     </div>
 
-                    <div className="flex flex-col items-center gap-2 md:gap-3 py-6 md:py-8 bg-black bg-opacity-70 w-full">
+                    <div className="flex flex-col items-center gap-2 md:gap-3 py-6 md:py-8 bg-black bg-opacity-70 w-full text-white">
                         <VisibilityItem label="1st Experiment" onClick={() => navigate("/firstExperiment")} />
                     </div>
 

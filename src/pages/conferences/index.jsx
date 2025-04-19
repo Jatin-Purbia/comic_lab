@@ -35,7 +35,7 @@ const Conferences = () => {
           </div>
 
           {/* Visibility Items */}
-          <div className="flex flex-col items-center gap-2 md:gap-3 py-6 md:py-8 bg-black bg-opacity-70 w-full">
+          <div className="flex flex-col items-center gap-2 md:gap-3 py-6 md:py-8 bg-black bg-opacity-70 w-full text-white ">
             <VisibilityItem label="IGNCC 2024" onClick={() => navigate("/igncc2024")} />
             <VisibilityItem label="IGNCC 2025" onClick={() => navigate("/igncc2025")} />
           </div>
