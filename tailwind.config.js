@@ -30,8 +30,12 @@ module.exports = {
         openSauce: ['"OpenSauceBold"', 'OpenSauce-Bold'], // Bold style
         openSauceSemiBold: ['"OpenSauceSemiBold"', 'OpenSauce-SemiBold'], // SemiBold style
         openSauceRegular: ['"OpenSauceRegular"', 'OpenSauce-Regular'], // Regular style
+        gladione: ['Gladione', 'serif'],
       },
+      
     },
   },
+
+  
   plugins: [],
 };
