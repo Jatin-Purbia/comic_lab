@@ -6,12 +6,20 @@ import Media1 from "../assets/media-1.png";
 import Media2 from "../assets/media-2.png";
 import Media3 from "../assets/media-3.png";
 import Media4 from "../assets/media-4.png";
+import bg from "../assets/welcome_page_bg.png";
+import block from "../assets/cover_page_block_design.png";
 
 const Landing = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="relative h-screen w-full flex flex-col items-center justify-center bg-[#e4edd4] text-center overflow-hidden">
+    <div
+      className="relative h-screen w-full flex flex-col items-center justify-center text-center overflow-hidden"
+      style={{ backgroundImage: `url(${bg})`, backgroundSize: "cover", backgroundPosition: "center" }}
+    >
+      {/* Greenish Overlay */}
+      <div className="absolute inset-0 bg-[#bed2b4] opacity-45 z-0"></div>
+
       {/* Soft background gradient circles */}
       <div className="absolute -top-20 -left-20 w-96 h-96 bg-green-200 rounded-full opacity-30 blur-3xl"></div>
       <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-green-100 rounded-full opacity-40 blur-2xl"></div>
@@ -33,8 +41,14 @@ const Landing = () => {
           <img src={Media4} alt="Character 4" className="w-24 md:w-32 hover:scale-105 transition-transform duration-300" />
         </div>
 
-        {/* Decorative Green Checkered Line */}
-        <div className="w-3/4 md:w-2/3 h-1.5 bg-gradient-to-r from-green-700 via-lime-600 to-green-700 mt-10 rounded-full mx-auto"></div>
+        {/* Decorative block at the bottom */}
+        <div
+          className="h-16 w-screen bg-repeat-x mt-10"
+          style={{
+            backgroundImage: `url(${block})`,
+            backgroundSize: "auto 100%",
+          }}
+        ></div>
 
         {/* Enter Button */}
         <button
