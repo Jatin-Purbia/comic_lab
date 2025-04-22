@@ -1,9 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import bgImage from "../../assets/bg1.png";
+import publication1Image from "../../assets/publication1.png"; // Import your image here
 
 const Publications = () => {
   const navigate = useNavigate();
+
   return (
     <div className="relative min-h-screen w-full">
       {/* Fixed Background */}
@@ -29,12 +31,21 @@ const Publications = () => {
           <div className="text-center">
             <h1 className="text-6xl md:text-7xl font-bold text-white">Publications</h1>
             <h2 className="text-3xl md:text-4xl font-bold mt-2 text-white">
-              Our Research
+              We have also published.
             </h2>
           </div>
 
-          <div className="flex flex-col items-center gap-2 md:gap-3 py-6 md:py-8 bg-black bg-opacity-70 w-full">
-            {/* Add your publications content here */}
+          {/* Visibility Items */}
+          <div
+            className="relative z-10 flex flex-col items-center gap-4 py-8 bg-black bg-opacity-70 w-full"
+            style={{ minHeight: "50vh" }}
+          >
+            <VisibilityItem
+              label="Publication 1"
+              onClick={() => window.open("https://zubaanprojects.org/projects/fragrance-of-peace/e-essays/")}
+              imageSrc={publication1Image}
+            />
+            {/* Add more publications as needed */}
           </div>
 
           <div className="text-center py-6 md:pb-10">
@@ -47,5 +58,20 @@ const Publications = () => {
     </div>
   );
 };
+
+// Reusable item component for text link with an image below, centered
+const VisibilityItem = ({ label, onClick, imageSrc }) => (
+  <div
+    onClick={onClick}
+    className="cursor-pointer text-3xl font-semibold inline-block text-center bg-black bg-opacity-50 p-4 rounded-md w-3/4 md:w-1/2 mb-4"
+  >
+    <span className="block text-white">{label}</span>
+    <img
+      src={imageSrc}
+      alt={label}
+      className="w-1/2 mx-auto h-auto object-contain mt-4 rounded-md" // Centered image
+    />
+  </div>
+);
 
 export default Publications;
