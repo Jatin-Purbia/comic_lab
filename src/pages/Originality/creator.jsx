@@ -27,20 +27,21 @@ const Creator = () => {
 
         {/* Content */}
         <div className="flex-1 flex flex-col items-center justify-center text-center py-12 md:py-16">
-          <div className="text-center">
+          <div className="text-center mb-10">
             <h1 className="text-6xl md:text-7xl font-bold text-white">Comics Creators</h1>
             <h2 className="text-3xl md:text-4xl font-bold mt-2 text-white">
               The ones who drew.
             </h2>
           </div>
 
-          <div className="flex flex-col items-center gap-2 md:gap-3 py-6 md:py-8 bg-black bg-opacity-70 w-full">
+          <div className="relative z-10 flex flex-col gap-4 py-8 bg-black bg-opacity-70 w-full"
+        style={{ minHeight: "50vh" }}>
             <ul className="text-lg md:text-xl leading-relaxed space-y-1 mx-auto list-disc">
-              <div className="flex flex-col items-center text-white">
-                <li className="text-center">David Huxley, Routledge Journal of Graphic Novels and Comics</li>
-                <li className="text-center">Felipe Muhr, Ghent University</li>
-                <li className="text-center">Makayla M. Lewis, Kingston University London</li>
-                <li className="text-center">Nigar Nazar, Gogi Studios</li>
+              <div className="flex flex-col gap-2 items-start text-white">
+                <li className="text-xl">David Huxley, Routledge Journal of Graphic Novels and Comics</li>
+                <li className="text-xl">Felipe Muhr, Ghent University</li>
+                <li className="text-xl">Makayla M. Lewis, Kingston University London</li>
+                <li className="text-xl">Nigar Nazar, Gogi Studios</li>
               </div>
             </ul>
           </div>

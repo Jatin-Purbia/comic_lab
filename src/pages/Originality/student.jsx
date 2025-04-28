@@ -27,19 +27,20 @@ const Student = () => {
 
         {/* Content */}
         <div className="flex-1 flex flex-col items-center justify-center text-center py-12 md:py-16">
-          <div className="text-center">
-            <h1 className="text-6xl md:text-7xl font-bold text-white">Student</h1>
+          <div className="text-center mb-10">
+            <h1 className="text-6xl md:text-7xl font-bold text-white">IITJ Students & Alumni</h1>
             <h2 className="text-3xl md:text-4xl font-bold mt-2 text-white">
-              Our Students
+              The Students
             </h2>
           </div>
 
-          <div className="flex flex-col items-center gap-2 md:gap-3 py-6 md:py-8 bg-black bg-opacity-70 w-full">
+          <div  className="relative z-10 flex flex-col gap-4 items-left py-8 bg-black bg-opacity-70 w-full"
+            style={{ minHeight: "50vh" }}>
             <ul className="text-lg md:text-xl leading-relaxed space-y-1 mx-auto list-disc">
-              <div className="flex flex-col items-center text-white">
-                <li className="text-center">14 doctoral students</li>
-                <li className="text-center">19 Master's students</li>
-                <li className="text-center">28 Bachelor's students</li>
+              <div className="flex flex-col items-left gap-2 text-white">
+                <li className="text-xl">14 doctoral students</li>
+                <li className="text-xl">19 Master's students</li>
+                <li className="text-xl">28 Bachelor's students</li>
               </div>
             </ul>
           </div>

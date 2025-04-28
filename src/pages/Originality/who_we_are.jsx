@@ -26,15 +26,16 @@ const WhoWeAre = () => {
 
         {/* Content */}
         <div className="flex-1 flex flex-col items-center justify-center text-center py-12 md:py-16">
-          <div className="text-center">
+          <div className="text-center mb-10">
             <h1 className="text-6xl md:text-7xl font-bold text-white">Who We Are</h1>
             <h2 className="text-3xl md:text-4xl font-bold mt-2 text-white">
               Our Story
             </h2>
           </div>
 
-          <div className="flex flex-col items-center gap-2 md:gap-3 py-6 md:py-8 bg-black bg-opacity-70 w-full">
-            <p className="text-lg text-white md:text-xl leading-relaxed max-w-4xl text-center">
+          <div className="relative z-10 flex flex-col gap-4 items-center py-8 bg-black bg-opacity-70 w-full"
+            style={{ minHeight: "50vh" }}>
+            <p className="text-2xl text-white md:text-2xl font-semibold leading-relaxed max-w-4xl text-center">
               Comics Studies Lab @ IITJ is a platform that brings together faculty and students @ IITJ to set up one of the very first Comics Studies Labs in India.
               This lab derives its contents from the book project of its founder Dr. Natasa Thoudam. Her edited book explores the many origins, versions, and variations of Comics Studies.
             </p>

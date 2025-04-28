@@ -26,7 +26,7 @@ const Originality = () => {
 
         {/* Content */}
         <div className="flex-1 flex flex-col items-center justify-center text-center py-12 md:py-16">
-          <div className="text-center">
+          <div className="text-center mb-10">
             <h1 className="text-6xl md:text-7xl font-bold text-white">Originality</h1>
             <h2 className="text-3xl md:text-4xl font-bold mt-2 text-white">
               Our Identity
@@ -39,7 +39,7 @@ const Originality = () => {
             <OriginalityItem label="IITJ Students & Alumni" onClick={() => navigate('/student')} />
             <OriginalityItem label="Comic Creators" onClick={() => navigate('/creator')} />
             <OriginalityItem label="Comic Fans & Readers" onClick={() => navigate('/reader')} />
-            <OriginalityItem label="Comic Scholar" onClick={() => navigate('/scholar')} />
+            <OriginalityItem label="Comic Scholars" onClick={() => navigate('/scholar')} />
           </div>
 
           <div className="text-center py-6 md:pb-10">

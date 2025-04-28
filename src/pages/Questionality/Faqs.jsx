@@ -23,16 +23,13 @@ const Faqs = () => {
         <h1 className="text-7xl font-bold">FAQ's</h1>
         <h2 className="text-4xl font-bold mt-2">Readymade answers.</h2>
       </div>
-      <div
-        className="relative z-10 flex flex-col items-center gap-4 py-8 bg-black bg-opacity-70 w-full"
-        style={{ minHeight: "50vh" }}
-      >
-        <FaqItem
-          question="Coming soon!!"
-          answer=""
-        />   
-      </div>
+      
+      <div  className="relative z-10 flex flex-col items-center gap-4 py-8 bg-black bg-opacity-70 w-full"
+        style={{ minHeight: "50vh" }}>
+            <h2 className="text-3xl font-bold text-white">COMING SOON!!</h2>
+          </div>
       <div className="relative z-10 text-center pb-10">
+        
         <h3 className="text-5xl font-bold">WE WILL MAKE A DIFFERENCE TOGETHER</h3>
       </div>
     </div>

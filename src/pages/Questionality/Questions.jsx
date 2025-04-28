@@ -27,13 +27,14 @@ const Questions = () => {
         {/* Content */}
         <div className="flex-1 flex flex-col items-center justify-center text-center py-12 md:py-16">
           {/* Top Section */}
-          <div className="text-center">
+          <div className="text-center mb-10">
             <h1 className="text-7xl font-bold text-white">Questions</h1>
             <h2 className="text-4xl mt-4 text-white">Please ask.</h2>
           </div>
 
           {/* Middle Section */}
-          <div className="flex flex-col items-center justify-center bg-black bg-opacity-60 w-full py-12">
+          <div className="relative z-10 flex flex-col items-center gap-4 py-8 bg-black bg-opacity-70 w-full"
+        style={{ minHeight: "50vh" }}>
           <button
            className="text-3xl font-semibold underline cursor-pointer text-white"
            onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSfexKQ7g4Y_PZ85JA62R1u-Mx3iv6ZQ0n6JtmM4A5U3X1I97A/viewform', '_blank')}
