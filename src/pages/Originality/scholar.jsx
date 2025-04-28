@@ -28,7 +28,7 @@ const Scholar = () => {
         {/* Content */}
         <div className="flex-1 flex flex-col items-center justify-center text-center py-12 md:py-16">
           <div className="text-center">
-            <h1 className="text-6xl md:text-7xl font-bold text-white">Scholar</h1>
+            <h1 className="text-6xl md:text-7xl font-bold text-white">Scholars</h1>
             <h2 className="text-3xl md:text-4xl font-bold mt-2 text-white">
               Our Scholars
             </h2>

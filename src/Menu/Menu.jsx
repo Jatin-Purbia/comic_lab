@@ -46,11 +46,11 @@ const Menu = () => {
   ];
 
   const socialLinks = [
-    { icon: Youtube, url: "https://youtube.com" },
-    { icon: Linkedin, url: "https://linkedin.com" },
-    { icon: Instagram, url: "https://instagram.com" },
-    { icon: Facebook, url: "https://facebook.com" },
-    { icon: Twitter, url: "https://twitter.com" },
+    { icon: Youtube, url: "https://youtu.be/Fn1na19EaM0" },
+    { icon: Linkedin, url: "https://www.linkedin.com/in/comics-studies-lab-887911327/" },
+    { icon: Instagram, url: "https://www.instagram.com/comicsstudieslabatiitj/" },
+    { icon: Facebook, url: "https://www.facebook.com/profile.php?id=61565129591764" },
+    { icon: Twitter, url: " https://x.com/ComicsSLabIITJ" },
   ];
 
   if (isLoading) {
