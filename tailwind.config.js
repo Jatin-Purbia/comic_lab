@@ -31,7 +31,12 @@ module.exports = {
         openSauceSemiBold: ['"OpenSauceSemiBold"', 'OpenSauce-SemiBold'], // SemiBold style
         openSauceRegular: ['"OpenSauceRegular"', 'OpenSauce-Regular'], // Regular style
         gladione: ['Gladione', 'serif'],
-      },
+
+        // New Fonts
+        hobo : ['hobo_bt'], 
+        gladiora: ['gladiora', 'serif'],
+        abhayalibre: ['Abhaya Libre', 'serif'],
+    },
       
     },
   },

@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Youtube, Linkedin, Instagram, Facebook, Twitter, User } from "lucide-react";
 import logo from "../assets/logo.png";
 import bg from "../assets/welcome_page_bg.png";
+
 const Menu = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [user, setUser] = useState(null);
@@ -10,13 +11,12 @@ const Menu = () => {
   const navigate = useNavigate();
 
   const slides = [
-    { title: "WEB VIEWER", bgColor: "bg-[#bfbba6]" },
-    { title: "COMICS STUDIES", bgColor: "bg-[#dcd8bb]" },
-    { title: "IITJ LAB", bgColor: "bg-[#bfbba6]" },
+    { title: "WEB VIEWER", bgColor: "bg-[#e7e3d8]" },
+    { title: "COMICS STUDIES", bgColor: "bg-[#e7e3d8]" },
+    { title: "IITJ LAB", bgColor: "bg-[#e7e3d8]" },
   ];
 
   useEffect(() => {
-    // Load user data
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
       try {
@@ -29,12 +29,10 @@ const Menu = () => {
   }, []);
 
   useEffect(() => {
-    // Set up carousel interval
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 3000);
 
-    // Clean up interval on component unmount
     return () => clearInterval(interval);
   }, [slides.length]);
 
@@ -64,9 +62,8 @@ const Menu = () => {
   }
 
   return (
-    
     <div
-      className="relative min-h-screen w-full flex flex-col md:flex-row text-center overflow-hidden"
+      className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-x-hidden bg-[#f3eed3] p-6"
       style={{
         backgroundImage: `url(${bg})`,
         backgroundSize: "cover",
@@ -77,7 +74,7 @@ const Menu = () => {
       {/* Profile Icon */}
       <button
         onClick={() => navigate('/profile')}
-        className="fixed top-4 right-4 z-20 bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-2 rounded-full transition-all duration-200"
+        className="fixed top-4 right-4 bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-2 rounded-full transition-all"
       >
         {user ? (
           <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-lg font-bold text-black">
@@ -88,81 +85,60 @@ const Menu = () => {
         )}
       </button>
 
-      {/* Left Section */}
-      <div className="flex-1 flex flex-col justify-center items-center px-6 py-10">
-        {/* Carousel */}
-        <div className="w-full max-w-4xl mb-8 relative">
-          <div className="overflow-hidden rounded-lg shadow-xl">
-            <div
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-            >
-              {slides.map((slide, index) => (
-                <div
+      {/* Carousel Section */}
+      <div className="w-full max-w-4xl bg-[#d6d3c4] rounded-2xl p-8 mb-20 text-center shadow-lg">
+        {/* Increased max-w to 4xl, padding to p-8, margin-bottom to mb-20 */}
+        <h1 className="text-5xl md:text-6xl font-extrabold text-black">{slides[currentSlide].title}</h1>
+      </div>
+
+      <div className="w-full flex flex-col md:flex-row justify-center gap-16">
+        {/* Logo and Title Section */}
+        <div className="flex flex-col h-full md:flex-row items-center mb-10 gap-8">
+          {/* Logo Image */}
+          <div className="flex-shrink-0 justify-center h-full">
+            <img src={logo} alt="Logo" className="w-28 h-40" />
+          </div>
+
+          {/* Title and Socials */}
+          <div className="flex flex-col items-center text-center justify-center w-full max-w-md">
+            <h1 className="text-4xl md:text-4xl font-extrabold text-[#3c602f] mt-2">
+              WELCOME TO COMICS STUDIES LAB @ IITJ
+            </h1>
+
+            <p className="text-xl mt-10 italic text-[#5a704d]">
+              A site for collective viewing, consuming, & reception of Comics.
+            </p>
+
+            {/* Social Links */}
+            <div className="flex gap-6 mt-10 justify-center items-center">
+              {socialLinks.map(({ icon: Icon, url }, index) => (
+                <a
                   key={index}
-                  className={`w-full ${slide.bgColor} px-10 py-8 flex-shrink-0`}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#3c602f] hover:text-[#5a704d] transition-colors"
                 >
-                  <h1 className="text-4xl md:text-5xl font-extrabold text-black">
-                    {slide.title}
-                  </h1>
-                </div>
+                  <Icon size={28} />
+                </a>
               ))}
             </div>
           </div>
-          <div className="flex justify-center mt-4 gap-2">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                className={`w-3 h-3 rounded-full ${
-                  currentSlide === index ? "bg-[#3c602f]" : "bg-gray-300"
-                }`}
-                onClick={() => setCurrentSlide(index)}
-              />
-            ))}
-          </div>
+
         </div>
 
-        {/* Logo and Title Section */}
-        <div className="flex items-center justify-center gap-6 mb-8">
-          <img src={logo} alt="Logo" className="w-20 h-20" />
-          <div className="text-left">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#3c602f]">WELCOME TO</h2>
-            <h1 className="text-3xl md:text-4xl font-extrabold text-[#3c602f] leading-tight">
-              COMICS STUDIES LAB @ IITJ
-            </h1>
-            <p className="text-md md:text-lg italic text-[#5a704d] mt-2">
-              A site for collective viewing, consuming, & reception of Comics.
-            </p>
-          </div>
-        </div>
-
-        {/* Social Icons */}
-        <div className="flex justify-center gap-6">
-          {socialLinks.map(({ icon: Icon, url }, index) => (
-            <a
+        {/* Navigation Buttons */}
+        <div className="flex flex-col items-center gap-4 w-full max-w-xs">
+          {links.map(({ text, path }, index) => (
+            <Link
               key={index}
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#3c602f] hover:text-[#5a704d] transition-colors"
+              to={path}
+              className="w-full bg-[#5a704d] hover:bg-[#3c602f] text-white font-semibold py-3 rounded-full text-center shadow-md hover:shadow-lg transition-all"
             >
-              <Icon size={28} />
-            </a>
+              {text}
+            </Link>
           ))}
         </div>
-      </div>
-
-      {/* Right Sidebar */}
-      <div className="w-full md:w-72 bg-[#dcd8bb] flex flex-col justify-center items-center py-10 gap-4 shadow-lg md:mr-4">
-        {links.map(({ text, path }, index) => (
-          <Link
-            key={index}
-            to={path}
-            className="w-64 text-white bg-[#5a704d] hover:bg-[#3c602f] px-6 py-4 rounded-lg text-md font-semibold transition duration-300 text-center shadow-md hover:shadow-lg transform hover:-translate-y-1"
-          >
-            {text}
-          </Link>
-        ))}
       </div>
     </div>
   );

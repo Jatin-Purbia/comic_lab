@@ -25,11 +25,11 @@ const Landing = () => {
       <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-green-100 rounded-full opacity-40 blur-2xl"></div>
 
       {/* Main Content */}
-      <div className="z-10 px-4">
-        <h1 className="text-5xl md:text-8xl font-extrabold text-[#2f4f29] drop-shadow-md" style={{ fontFamily: 'Hobo BT' }}>
+      <div className="z-10 px-4 mt-5">
+        <h1 className="text-5xl md:text-8xl font-extrabold font-hobo text-[#2f4f29] drop-shadow-md">
           Comics Studies Lab @ IITJ
         </h1>
-        <p className="text-xl md:text-2xl italic text-[#3c602f] mt-4 font-gladione">
+        <p className="text-xl md:text-2xl italic text-[#3c602f] mt-4 font-gladiora">
           Our Home in the World of Comics
         </p>
 
@@ -54,7 +54,7 @@ const Landing = () => {
         <button
           onClick={() => navigate("/Menu")}
           style={{ fontFamily: "'Abhaya Libre', serif", fontWeight: 600 }}
-          className="mt-10  px-6 py-2 text-5xl text-[#3c602f]  hover: "
+          className="mt-5 mb-5 px-6 py-2 text-5xl text-[#3c602f]  hover: "
         >
           ENTER
         </button>
