@@ -20,9 +20,13 @@ import Winner from "./pages/Activity/Competitions/winner.jsx";
 import Competitions from "./pages/Activity/Competitions/index.jsx";
 import Conferences from "./pages/Activity/Conferences.jsx";
 import Courses from "./pages/Activity/Courses.jsx";
-import Events from "./pages/Activity/Events.jsx";
+import Events from "./pages/Activity/Eventss/index.jsx";
 import Projects from "./pages/Activity/Projects.jsx";
 import Publications from "./pages/Activity/Publications.jsx";
+
+// Events Subpages
+import FelipeMuhr from "./pages/Activity/Eventss/FelipeMuhr.jsx";
+import DavidHuxley from "./pages/Activity/Eventss/DavidHuxley.jsx";
 
 // Questionality Subpages
 import Faqs from "./pages/Questionality/Faqs.jsx";
@@ -109,7 +113,9 @@ function App() {
             {/*Competitions section*/}
             <Route path="/2d-3d" element={<Comp1/>}/>
             <Route path="/winner" element={<Winner/>}/>
-            
+            {/* Events section */}
+            <Route path = "/felipe-muhr" element={<FelipeMuhr/>}/>
+            <Route path = "/david-huxley" element={<DavidHuxley/>}/>
 
             {/* 404 page */}
 

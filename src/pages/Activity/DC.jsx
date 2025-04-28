@@ -33,7 +33,10 @@ const DC = () => {
             </h2>
           </div>
 
-          <div className="flex flex-col items-center gap-2 md:gap-3 py-6 md:py-8 bg-black bg-opacity-70 w-full">
+          <div
+   className="relative z-10 flex flex-col items-center gap-4 py-8 bg-black bg-opacity-70 w-full"
+   style={{ minHeight: "50vh" }}
+ >
             {/* Add your design credit content here */}
           </div>
 

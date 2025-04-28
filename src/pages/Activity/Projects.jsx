@@ -33,7 +33,10 @@ const Projects = () => {
             </h2>
           </div>
 
-          <div className="flex flex-col items-center gap-2 md:gap-3 py-6 md:py-8 bg-black bg-opacity-70 w-full">
+          <div
+   className="relative z-10 flex flex-col items-center gap-4 py-8 bg-black bg-opacity-70 w-full"
+   style={{ minHeight: "50vh" }}
+ >
             <VisibilityItem label="Design Credit Projects" onClick={() => navigate("/dc")} />
             {/* <VisibilityItem label="Media Coverage" onClick={() => navigate("/media")} /> */}
           </div>
@@ -52,7 +55,7 @@ const Projects = () => {
 const VisibilityItem = ({ label, onClick }) => (
   <span
     onClick={onClick}
-    className="cursor-pointer text-3xl font-semibold inline-block"
+    className="cursor-pointer text-3xl font-semibold inline-block text-white"
   >
     {label}
   </span>
